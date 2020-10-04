@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DataSocket:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DataSocket_jar</output-path>
+    <root id="archive" name="DataSocket.jar">
+      <element id="module-output" name="DataSocket" />
+    </root>
+  </artifact>
+</component>

@@ -1,5 +1,8 @@
 package client;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.net.*;
 
@@ -8,6 +11,9 @@ public class IPClient {
 
     private String hostIP;
     private int hostPort;
+
+    private Logger logger= LoggerFactory.getLogger(IPClient.class);
+
 
     public IPClient(String hostIP, int hostPort) {
         this.hostIP = hostIP;
@@ -23,11 +29,13 @@ public class IPClient {
         ) {
             out.println(message);
             str = in.readLine();
+            logger.info(message);
+            logger.info(str);
         } catch (UnknownHostException e) {
-            System.err.println("Don't know about host " + hostIP);
+            logger.error("Don't know about host " + hostIP);
             System.exit(1);
         } catch (IOException e) {
-            System.err.println("Couldn't get I/O for the connection to " +
+            logger.error("Couldn't get I/O for the connection to " +
                     hostIP);
             System.exit(1);
         }

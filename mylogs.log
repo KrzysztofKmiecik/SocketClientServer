@@ -1,0 +1,4 @@
+07-10-2020 18:54:06 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+07-10-2020 18:54:06 INFO  IPClient:33 - BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+07-10-2020 18:54:06 INFO  Main:30 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+07-10-2020 18:54:06 INFO  Main:31 - Milling received: BCNF|id=7DG1ID6X|id=test|status=PASS|map=11

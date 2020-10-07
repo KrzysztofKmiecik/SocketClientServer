@@ -1,23 +1,38 @@
 import client.IPClient;
-import server.IPServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import server.IPServerClient;
 
 public class Main {
 
+
     public static void main(String[] args) {
-        System.out.println("Hello");
+        Logger logger = LoggerFactory.getLogger(Main.class);
+        System.out.println("Hello I'm JavaServer waiting for connection");
 
-        //FIS simulation
-        IPServer FisServer = new IPServer(5555);
-        FisServer.connect("FIS BCNF");
+       /* if (args.length > 1) {
+            final String ip = args[0];
+            final int port = Integer.parseInt(args[1]);*/
 
-        //Java Server
-        IPServerClient javaServer =IPServerClient.with(4444, new IPClient("127.0.0.1", 5555));
-        javaServer.connect();
 
-        //Milling
-        IPClient millingClient = new IPClient("127.0.0.1", 4444);
-        millingClient.sendAndReceiveIPMessage("BREQ");
+            /*//FIS simulation
+            IPServer FisServer = new IPServer(5555);
+            FisServer.connect("FIS BCNF");*/
+
+     /*   //Java Server
+        IPServerClient javaServer = IPServerClient.with(4444, new IPClient("10.235.241.235", 24405));
+        javaServer.connect();*/
+
+        //Milling client
+        IPClient millingClient = new IPClient("eoltserwer", 4444);
+        String sendMessage = "BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X";
+        String millingResponse = millingClient.sendAndReceiveIPMessage(sendMessage);
+        logger.info("Milling Sent: " + sendMessage);
+        logger.info("Milling received: " + millingResponse);
+
+      /*  } else {
+            logger.error("usage Main <IP> <Port>");
+       }*/
 
 
     }

@@ -1,6 +1,8 @@
 package server;
 
 import client.IPClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,8 +17,8 @@ import java.util.ListIterator;
 
 public class IPServerClient {
 
-
     private final int portNumber;
+    private Logger logger = LoggerFactory.getLogger(IPServerClient.class);
 
     private IPClient FisClient;
 
@@ -39,10 +41,11 @@ public class IPServerClient {
             String receivedFromFis = FisClient.sendAndReceiveIPMessage(in.readLine());
             String myModifiedString = getMyModifiedString(receivedFromFis);
             out.println(myModifiedString);
+            logger.info("JavaServer received from FIS: " + receivedFromFis);
+            logger.info("JavaServer sent to milling " + myModifiedString);
         } catch (IOException e) {
-            System.out.println("Exception caught when trying to listen on port " + portNumber + " or listening for a connection");
-            System.out.println(e.getMessage());
-            // e.printStackTrace();
+            logger.error("Exception caught when trying to listen on port " + portNumber + " or listening for a connection");
+            logger.error(e.getMessage());
         }
     }
 
@@ -60,7 +63,6 @@ public class IPServerClient {
             }
             if (currentStr.contains("map=")) {
                 iterator.set(currentStr.concat("1"));
-                System.out.println();
             }
         }
 

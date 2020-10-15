@@ -19,16 +19,16 @@ public class Main {
             IPServer FisServer = new IPServer(5555);
             FisServer.connect("FIS BCNF");*/
 
-     /*   //Java Server
+        //Java Server
         IPServerClient javaServer = IPServerClient.with(4444, new IPClient("10.235.241.235", 24405));
-        javaServer.connect();*/
+        javaServer.connect();
 
-        //Milling client
+   /*     //Milling client
         IPClient millingClient = new IPClient("eoltserwer", 4444);
         String sendMessage = "BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X";
         String millingResponse = millingClient.sendAndReceiveIPMessage(sendMessage);
         logger.info("Milling Sent: " + sendMessage);
-        logger.info("Milling received: " + millingResponse);
+        logger.info("Milling received: " + millingResponse);*/
 
       /*  } else {
             logger.error("usage Main <IP> <Port>");

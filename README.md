@@ -6,5 +6,6 @@
 - [x] Transform Method  
 - [x] Mock test
 - [x] Log4j
+- [x] Dockerfile
 - [ ] Real tests
 - [ ] Performance test

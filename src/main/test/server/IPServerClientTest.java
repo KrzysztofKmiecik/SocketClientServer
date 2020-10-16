@@ -1,12 +1,14 @@
 package server;
 
-import com.sun.tools.javac.util.StringUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.stream.Stream;
 
 import static org.mockito.Mockito.mock;
@@ -18,18 +20,26 @@ public class IPServerClientTest {
 
     @Before
     public void before() {
-        javaServer = mock(IPServerClient.class);
-        when(javaServer.getMyModifiedString("BCNF|id=9FG1KF4|status=PASS|map=1")).thenReturn("BCNF|id=9FG1KF4|id=test|status=PASS|map=11");
+     /*   javaServer = mock(IPServerClient.class);
+        when(javaServer.getMyModifiedString("BCNF|id=9FG1KF4|status=PASS|map=1")).thenReturn("BCNF|id=9FG1KF4|id=test|status=PASS|map=11");*/
     }
 
     @Test
     public void IPServerClientTest() {
 
-        String expected = "BCNF|id=9FG1KF4|id=test|status=PASS|map=11";
+   /*     String expected = "BCNF|id=9FG1KF4|id=test|status=PASS|map=11";
         String current = javaServer.getMyModifiedString("BCNF|id=9FG1KF4|status=PASS|map=1");
 
-        Assert.assertEquals(expected, current);
+        Assert.assertEquals(expected, current);*/
     }
+
+    @Test
+    public void getMyModifiedStringWithPrefixTestNOTFOUND() {
+
+
+    }
+
+
 
     @Test
     @Ignore
@@ -67,21 +77,21 @@ public class IPServerClientTest {
 
         strings1.add(index, "id=test");
 
-        String current="";
+        String current = "";
 
 
-        for (int i = 0; i <strings1.size() ; i++) {
-            if (i==strings1.size()-1) {
-                current=current+strings1.get(i);
+        for (int i = 0; i < strings1.size(); i++) {
+            if (i == strings1.size() - 1) {
+                current = current + strings1.get(i);
             } else {
-                current=current+strings1.get(i)+"|";
+                current = current + strings1.get(i) + "|";
             }
 
 
         }
 
 
-        Assert.assertEquals(expected,current);
+        Assert.assertEquals(expected, current);
 
     }
 

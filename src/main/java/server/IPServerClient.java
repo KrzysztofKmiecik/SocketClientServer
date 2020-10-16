@@ -11,9 +11,7 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
 
 public class IPServerClient {
 
@@ -21,14 +19,16 @@ public class IPServerClient {
     private Logger logger = LoggerFactory.getLogger(IPServerClient.class);
 
     private IPClient FisClient;
+    private String[] prefixes;
 
-    public static IPServerClient with(final int portNumber, final IPClient FisClient) {
-        return new IPServerClient(portNumber, FisClient);
+    public static IPServerClient with(final int portNumber, final IPClient FisClient,final String[] prefixes) {
+        return new IPServerClient(portNumber, FisClient,prefixes);
     }
 
-    private IPServerClient(final int portNumber, final IPClient FisClient) {
+    private IPServerClient(final int portNumber, final IPClient FisClient,final String[] prefixes) {
         this.portNumber = portNumber;
         this.FisClient = FisClient;
+        this.prefixes=prefixes;
     }
 
     public void connect() {
@@ -38,59 +38,24 @@ public class IPServerClient {
                 PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
         ) {
-            final List<String> prefixes = Arrays.asList("5S", "6S", "7S", "5T", "6T", "7T");
-            String input;
-            while ((input = in.readLine()) != null) {
-                for (String prefix : prefixes) {
-                    if (input.startsWith(prefix)) {
-                        String receivedFromFis = FisClient.sendAndReceiveIPMessage(in.readLine());
-                        String myModifiedString = getMyModifiedString(receivedFromFis);
-                        out.println(myModifiedString);
-                        logger.info("JavaServer received from FIS: " + receivedFromFis);
-                        logger.info("JavaServer sent to milling " + myModifiedString);
-                    }
-                }
-            }
+            final List<String> prefixes = Arrays.asList(this.prefixes);
+            String receivedFromClient = in.readLine();
+            String receivedFromFis = FisClient.sendAndReceiveIPMessage(receivedFromClient);
+            String myModifiedString = ModifiedStrings.getMyModifiedStringWithPrefix(prefixes, receivedFromClient, receivedFromFis);
+            out.println(myModifiedString);
+            logger.info("JavaServer received from FIS: " + receivedFromFis);
+            logger.info("JavaServer sent to milling " + myModifiedString);
         } catch (IOException e) {
             logger.error("Exception caught when trying to listen on port " + portNumber + " or listening for a connection");
             logger.error(e.getMessage());
         }
     }
 
-
-    public String getMyModifiedString(final String receivedFromFis) {
-
-        List<String> stringList = new LinkedList<>(Arrays.asList(receivedFromFis.split("[|]")));
-
-        ListIterator<String> iterator = stringList.listIterator();
-        int index = 0;
-        while (iterator.hasNext()) {
-            String currentStr = iterator.next();
-            if (currentStr.contains("id=")) {
-                index = iterator.nextIndex();
-            }
-            if (currentStr.contains("map=")) {
-                iterator.set(currentStr.concat("1"));
-            }
+    public void connectLoop(){
+        while (true){
+            this.connect();
         }
-
-        stringList.add(index, "id=test");
-
-        String current = "";
-        current = listToStringWithSeparator(stringList, "|");
-        return current;
     }
 
-    private String listToStringWithSeparator(final List<String> stringList, final String separator) {
 
-        String returnStr = "";
-        for (int i = 0; i < stringList.size(); i++) {
-            if (i == stringList.size() - 1) {
-                returnStr = returnStr + stringList.get(i);
-            } else {
-                returnStr = returnStr + stringList.get(i) + separator;
-            }
-        }
-        return returnStr;
-    }
 }

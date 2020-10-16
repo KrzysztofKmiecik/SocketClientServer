@@ -24,3 +24,68 @@
 15-10-2020 16:27:49 INFO  Main:33 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
 15-10-2020 16:27:49 INFO  Main:34 - Milling received: BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
 15-10-2020 16:28:28 ERROR IPClient:38 - Couldn't get I/O for the connection to eoltserverprod
+16-10-2020 10:21:05 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+16-10-2020 10:21:05 INFO  IPClient:33 - BCNF|id=7DG1ID6X|status=PASS|map=1
+16-10-2020 10:21:05 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+16-10-2020 10:21:05 INFO  Main:35 - Milling received: BCNF|id=7DG1ID6X|status=PASS|map=1
+16-10-2020 10:25:08 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+16-10-2020 10:25:08 INFO  IPClient:33 - BCNF|id=7DG1ID6X|status=PASS|map=1
+16-10-2020 10:25:08 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+16-10-2020 10:25:08 INFO  Main:35 - Milling received: BCNF|id=7DG1ID6X|status=PASS|map=1
+16-10-2020 11:33:34 ERROR IPClient:38 - Couldn't get I/O for the connection to localhost
+16-10-2020 11:35:32 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+16-10-2020 11:35:32 INFO  IPClient:33 - BCNF|id=7DG1ID6X|status=PASS|map=1
+16-10-2020 11:35:32 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+16-10-2020 11:35:32 INFO  Main:35 - Milling received: BCNF|id=7DG1ID6X|status=PASS|map=1
+16-10-2020 13:28:13 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+16-10-2020 13:28:13 INFO  IPClient:33 - BCNF|id=7DG1ID6X|status=PASS|map=1
+16-10-2020 13:28:13 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+16-10-2020 13:28:13 INFO  Main:35 - Milling received: BCNF|id=7DG1ID6X|status=PASS|map=1
+16-10-2020 13:29:13 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 13:29:13 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 13:29:13 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 13:29:13 INFO  Main:35 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 13:38:51 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 13:38:51 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 13:38:51 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 13:38:51 INFO  Main:35 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 13:55:47 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 13:55:47 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 13:55:47 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 13:55:47 INFO  Main:35 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:00:53 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:00:53 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:00:53 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:00:53 INFO  Main:35 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:01:00 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:01:00 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:01:00 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:01:00 INFO  Main:35 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:01:20 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:01:20 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:01:20 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:01:20 INFO  Main:35 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:01:37 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:01:37 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:01:37 INFO  Main:34 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:01:37 INFO  Main:35 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:10:07 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:10:07 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:10:07 INFO  Main:35 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:10:07 INFO  Main:36 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:10:15 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:10:15 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:10:15 INFO  Main:35 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:10:15 INFO  Main:36 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:10:26 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:10:26 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:10:26 INFO  Main:35 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:10:26 INFO  Main:36 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:10:46 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5VG1ID6X
+16-10-2020 14:10:46 INFO  IPClient:33 - BCNF|id=5VG1ID6X|status=FAIL|msg=Unit not exists in QTS database|
+16-10-2020 14:10:46 INFO  Main:35 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5VG1ID6X
+16-10-2020 14:10:46 INFO  Main:36 - Milling received: BCNF|id=5VG1ID6X|status=FAIL|msg=Unit not exists in QTS database|
+16-10-2020 14:11:06 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:11:06 INFO  IPClient:33 - BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database
+16-10-2020 14:11:06 INFO  Main:35 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SG1ID6X
+16-10-2020 14:11:06 INFO  Main:36 - Milling received: BCNF|id=5SG1ID6X|id=test|status=FAIL|msg=Unit not exists in QTS database

@@ -38,11 +38,19 @@ public class IPServerClient {
                 PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
         ) {
-            String receivedFromFis = FisClient.sendAndReceiveIPMessage(in.readLine());
-            String myModifiedString = getMyModifiedString(receivedFromFis);
-            out.println(myModifiedString);
-            logger.info("JavaServer received from FIS: " + receivedFromFis);
-            logger.info("JavaServer sent to milling " + myModifiedString);
+            final List<String> prefixes = Arrays.asList("5S", "6S", "7S", "5T", "6T", "7T");
+            String input;
+            while ((input = in.readLine()) != null) {
+                for (String prefix : prefixes) {
+                    if (input.startsWith(prefix)) {
+                        String receivedFromFis = FisClient.sendAndReceiveIPMessage(in.readLine());
+                        String myModifiedString = getMyModifiedString(receivedFromFis);
+                        out.println(myModifiedString);
+                        logger.info("JavaServer received from FIS: " + receivedFromFis);
+                        logger.info("JavaServer sent to milling " + myModifiedString);
+                    }
+                }
+            }
         } catch (IOException e) {
             logger.error("Exception caught when trying to listen on port " + portNumber + " or listening for a connection");
             logger.error(e.getMessage());

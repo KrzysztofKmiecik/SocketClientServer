@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         Logger logger = LoggerFactory.getLogger(Main.class);
-        System.out.println("Hello I'm JavaServer waiting for connection");
+
 
        /* if (args.length > 1) {
             final String ip = args[0];
@@ -20,11 +20,14 @@ public class Main {
             FisServer.connect("FIS BCNF");*/
 
         //Java Server
+        System.out.println("Hello I'm JavaServer waiting for connection");
         IPServerClient javaServer = IPServerClient.with(4444, new IPClient("10.235.241.235", 24405));
         javaServer.connect();
 
-   /*     //Milling client
-        IPClient millingClient = new IPClient("eoltserwer", 4444);
+      /*  //Milling client
+        System.out.println("Hello I'm Client");
+            // IPClient millingClient = new IPClient("eoltserwer", 4444);
+        IPClient millingClient = new IPClient("eoltserverprod", 4444);
         String sendMessage = "BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X";
         String millingResponse = millingClient.sendAndReceiveIPMessage(sendMessage);
         logger.info("Milling Sent: " + sendMessage);

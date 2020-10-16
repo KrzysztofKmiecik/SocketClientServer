@@ -2,3 +2,25 @@
 07-10-2020 18:54:06 INFO  IPClient:33 - BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
 07-10-2020 18:54:06 INFO  Main:30 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
 07-10-2020 18:54:06 INFO  Main:31 - Milling received: BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 14:36:19 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+15-10-2020 14:36:19 INFO  IPClient:33 - BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 14:36:19 INFO  Main:30 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+15-10-2020 14:36:19 INFO  Main:31 - Milling received: BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 14:58:37 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+15-10-2020 14:58:37 INFO  IPClient:33 - BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 14:58:37 INFO  Main:30 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+15-10-2020 14:58:37 INFO  Main:31 - Milling received: BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 15:57:07 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+15-10-2020 15:57:07 INFO  IPClient:33 - BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 15:57:07 INFO  Main:31 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+15-10-2020 15:57:07 INFO  Main:32 - Milling received: BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 15:59:02 ERROR IPClient:38 - Couldn't get I/O for the connection to eoltserverprod
+15-10-2020 16:05:26 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+15-10-2020 16:05:26 INFO  IPClient:33 - BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 16:05:26 INFO  Main:33 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+15-10-2020 16:05:26 INFO  Main:34 - Milling received: BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 16:27:49 INFO  IPClient:32 - BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+15-10-2020 16:27:49 INFO  IPClient:33 - BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 16:27:49 INFO  Main:33 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7DG1ID6X
+15-10-2020 16:27:49 INFO  Main:34 - Milling received: BCNF|id=7DG1ID6X|id=test|status=PASS|map=11
+15-10-2020 16:28:28 ERROR IPClient:38 - Couldn't get I/O for the connection to eoltserverprod

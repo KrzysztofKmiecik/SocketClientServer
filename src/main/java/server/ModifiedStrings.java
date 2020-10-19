@@ -1,45 +1,96 @@
 package server;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class ModifiedStrings {
 
-    public static  String getMyModifiedStringWithPrefix(List<String> prefixes, String receivedFromClient, String receivedFromFis) {
+    public static String getMyModifiedStringWithPrefix(List<String> prefixes, String receivedFromClient, String receivedFromFis) {
         String myModifiedString;
         for (String prefix : prefixes) {
-            if (receivedFromClient.contains("id="+prefix)) {
-                myModifiedString = getMyModifiedString(receivedFromFis);
+            if (receivedFromClient.contains("id=" + prefix)) {
+                myModifiedString = listToStringWithSeparator(prepareFinalList(receivedFromFis), "|");
                 return myModifiedString;
             }
         }
         return receivedFromFis;
     }
 
+    public static List<String> prepareFinalList(String receivedFromFis) {
+        List<String> stringList = addIDTest(receivedFromFis);
+        List<String> finalList = addMap(stringList);
+        return finalList;
+    }
 
-    public static  String getMyModifiedString(final String receivedFromFis) {
+    public static List<String> addIDTest(final String receivedFromFis) {
 
-        List<String> stringList = new LinkedList<>(Arrays.asList(receivedFromFis.split("[|]")));
+        List<String> stringList = convertFISResponseToList(receivedFromFis);
 
-        ListIterator<String> iterator = stringList.listIterator();
-        int index = 0;
-        while (iterator.hasNext()) {
-            String currentStr = iterator.next();
-            if (currentStr.contains("id=")) {
-                index = iterator.nextIndex();
-            }
-            if (currentStr.contains("map=")) {
-                iterator.set(currentStr.concat("1"));
-            }
+        int index = getIndex(stringList,"id");
+
+        stringList.add(index+1, "id=test");
+
+
+        return stringList;
+    }
+
+    public static List<String> addMap(final List<String> receivedFromFisList) {
+
+        List<String> finalList = new ArrayList<>(receivedFromFisList);
+
+        int mapIndex = getIndex(receivedFromFisList, "map");
+
+        String mapValue = getValue(receivedFromFisList, "map");
+        StringBuilder newMapValue = new StringBuilder(mapValue);
+        if ("0".equals(mapValue)) {
+            newMapValue.append("0");
+        } else if ("1".equals(mapValue)) {
+            newMapValue.append("1");
+
+        } else {
+            newMapValue.append("0");
         }
 
-        stringList.add(index, "id=test");
+        newMapValue.insert(0,"map=");
+        String finalString = newMapValue.toString();
+        finalList.set(mapIndex, finalString);
 
-        String current = "";
-        current = listToStringWithSeparator(stringList, "|");
-        return current;
+        return finalList;
+    }
+
+
+    public static List<String> convertFISResponseToList(final String receivedFromFis) {
+        List<String> stringList = new LinkedList<>(Arrays.asList(receivedFromFis.split("[|]")));
+
+        return stringList;
+    }
+
+
+    private static int getIndex(List<String> stringList, String key) {
+        ListIterator<String> iterator = stringList.listIterator();
+        int index = -1;
+        while (iterator.hasNext()) {
+            String currentStr = iterator.next();
+            if (currentStr.contains(key)) {
+                index = iterator.nextIndex() - 1;
+                break;
+            }
+        }
+        return index;
+    }
+
+    public static String getValue(List<String> stringList, String key) {
+        String value = "";
+
+        int index = getIndex(stringList, key);
+        String valueFromIndex = stringList.get(index);
+        String[] pair = valueFromIndex.split("=");
+        if (pair[0].equals(key)) {
+            value = pair[1];
+        } else {
+            value = null;
+        }
+
+        return value;
     }
 
 

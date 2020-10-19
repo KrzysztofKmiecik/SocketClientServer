@@ -28,9 +28,9 @@ public class Main {
         //Milling client
         System.out.println("Hello I'm Client");
             // IPClient millingClient = new IPClient("eoltserwer", 4444);
-        IPClient millingClient = new IPClient("10.235.244.57", 4444);
-      //  IPClient millingClient = new IPClient("localhost", 4444);
-        String sendMessage = "BREQ|process=MILLING|station=SMT_MILLING_1|id=5SZZZZZ";
+      //  IPClient millingClient = new IPClient("10.235.244.57", 4444);
+        IPClient millingClient = new IPClient("localhost", 4444);
+        String sendMessage = "BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ";
         String millingResponse = millingClient.sendAndReceiveIPMessage(sendMessage);
         logger.info("Milling Sent: " + sendMessage);
         logger.info("Milling received: " + millingResponse);

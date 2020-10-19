@@ -9,5 +9,6 @@
 - [x] Log4j
 - [x] Dockerfile
 - [x] Loop
+- [x] Refactoring
 - [ ] Real tests
 - [ ] Performace test

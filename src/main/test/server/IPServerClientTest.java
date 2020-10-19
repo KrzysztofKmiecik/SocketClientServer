@@ -11,9 +11,6 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.stream.Stream;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
 public class IPServerClientTest {
 
     private IPServerClient javaServer;
@@ -38,7 +35,6 @@ public class IPServerClientTest {
 
 
     }
-
 
 
     @Test

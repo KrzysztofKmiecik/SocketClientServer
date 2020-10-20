@@ -32,6 +32,7 @@ public class IPServerClient {
     }
 
     public void connect() {
+        logger.info("START");
         try (
                 ServerSocket serverSocket = new ServerSocket(this.portNumber);
                 Socket clientSocket = serverSocket.accept();
@@ -40,15 +41,18 @@ public class IPServerClient {
         ) {
             final List<String> prefixes = Arrays.asList(this.prefixes);
             String receivedFromClient = in.readLine();
+            logger.info("JavaServer received from milling: " + receivedFromClient);
             String receivedFromFis = FisClient.sendAndReceiveIPMessage(receivedFromClient);
-            String myModifiedString = ModifiedStrings.getMyModifiedStringWithPrefix(prefixes, receivedFromClient, receivedFromFis);
-            out.println(myModifiedString);
             logger.info("JavaServer received from FIS: " + receivedFromFis);
+            String myModifiedString = ModifiedStrings.getMyModifiedStringWithPrefix(prefixes, receivedFromFis);
+            logger.info("JavaServer is going to send to milling " + myModifiedString);
+            out.println(myModifiedString);
             logger.info("JavaServer sent to milling " + myModifiedString);
         } catch (IOException e) {
             logger.error("Exception caught when trying to listen on port " + portNumber + " or listening for a connection");
             logger.error(e.getMessage());
         }
+        logger.info("STOP");
     }
 
     public void connectLoop(){

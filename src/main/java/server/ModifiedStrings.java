@@ -4,14 +4,18 @@ import java.util.*;
 
 public class ModifiedStrings {
 
-    public static String getMyModifiedStringWithPrefix(List<String> prefixes, String receivedFromClient, String receivedFromFis) {
+    public static String getMyModifiedStringWithPrefix(List<String> prefixes, String receivedFromFis) {
         String myModifiedString;
-        for (String prefix : prefixes) {
-            if (receivedFromClient.contains("id=" + prefix)) {
-                myModifiedString = listToStringWithSeparator(prepareFinalList(receivedFromFis), "|");
-                return myModifiedString;
+        if (receivedFromFis.contains("BCNF")){
+            for (String prefix : prefixes) {
+                if (receivedFromFis.contains("id=" + prefix)) {
+                    myModifiedString = listToStringWithSeparator(prepareFinalList(receivedFromFis), "|");
+                    return myModifiedString;
+                }
             }
+
         }
+
         return receivedFromFis;
     }
 
@@ -25,9 +29,9 @@ public class ModifiedStrings {
 
         List<String> stringList = convertFISResponseToList(receivedFromFis);
 
-        int index = getIndex(stringList,"id");
+        int index = getIndex(stringList, "id");
 
-        stringList.add(index+1, "id=test");
+        stringList.add(index + 1, "id=test");
 
 
         return stringList;
@@ -38,25 +42,44 @@ public class ModifiedStrings {
         List<String> finalList = new ArrayList<>(receivedFromFisList);
 
         int mapIndex = getIndex(receivedFromFisList, "map");
-
-        String mapValue = getValue(receivedFromFisList, "map");
-        StringBuilder newMapValue = new StringBuilder(mapValue);
-        if ("0".equals(mapValue)) {
+        if (mapIndex >= 0) {
+            String mapValue = getValue(receivedFromFisList, "map");
+            StringBuilder newMapValue = new StringBuilder(mapValue);
             newMapValue.append("0");
-        } else if ("1".equals(mapValue)) {
-            newMapValue.append("1");
+            newMapValue.insert(0, "map=");
+            String finalString = newMapValue.toString();
+            finalList.set(mapIndex, finalString);
 
-        } else {
-            newMapValue.append("0");
         }
-
-        newMapValue.insert(0,"map=");
-        String finalString = newMapValue.toString();
-        finalList.set(mapIndex, finalString);
 
         return finalList;
     }
 
+    public static List<String> addMapWithCopy(final List<String> receivedFromFisList) {
+
+        List<String> finalList = new ArrayList<>(receivedFromFisList);
+
+        int mapIndex = getIndex(receivedFromFisList, "map");
+        if (mapIndex >= 0) {
+            String mapValue = getValue(receivedFromFisList, "map");
+            StringBuilder newMapValue = new StringBuilder(mapValue);
+            if ("0".equals(mapValue)) {
+                newMapValue.append("0");
+            } else if ("1".equals(mapValue)) {
+                newMapValue.append("1");
+
+            } else {
+                newMapValue.append("0");
+            }
+
+            newMapValue.insert(0, "map=");
+            String finalString = newMapValue.toString();
+            finalList.set(mapIndex, finalString);
+
+        }
+
+        return finalList;
+    }
 
     public static List<String> convertFISResponseToList(final String receivedFromFis) {
         List<String> stringList = new LinkedList<>(Arrays.asList(receivedFromFis.split("[|]")));

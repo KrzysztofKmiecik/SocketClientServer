@@ -27,9 +27,9 @@ public class IPClient {
                 PrintWriter out = new PrintWriter(mySocket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(mySocket.getInputStream()));
         ) {
+            logger.info("Milling simulation_"+message);
             out.println(message);
             str = in.readLine();
-            logger.info(message);
             logger.info(str);
         } catch (UnknownHostException e) {
             logger.error("Don't know about host " + hostIP);

@@ -2,64 +2,57 @@ package server;
 
 import java.util.*;
 
+import static java.util.Collections.*;
+
 public class ModifiedStrings {
 
-    public static String getMyModifiedStringWithPrefix(List<String> prefixes, String receivedFromFis) {
+    public static String getMyModifiedStringWithPrefix(final List<String> prefixes, final String receivedFromFis) {
         String myModifiedString;
-        if (receivedFromFis.contains("BCNF")){
+        if (receivedFromFis.contains("BCNF")) {
             for (String prefix : prefixes) {
                 if (receivedFromFis.contains("id=" + prefix)) {
                     myModifiedString = listToStringWithSeparator(prepareFinalList(receivedFromFis), "|");
                     return myModifiedString;
                 }
             }
-
         }
-
         return receivedFromFis;
     }
 
-    public static List<String> prepareFinalList(String receivedFromFis) {
-        List<String> stringList = addIDTest(receivedFromFis);
-        List<String> finalList = addMap(stringList);
+    public static List<String> prepareFinalList(final String receivedFromFis) {
+        final List<String> stringList;
+        final List<String> finalList;
+        stringList = addIDTest(receivedFromFis);
+        finalList = addMap(stringList);
         return finalList;
     }
 
     public static List<String> addIDTest(final String receivedFromFis) {
-
-        List<String> stringList = convertFISResponseToList(receivedFromFis);
-
-        int index = getIndex(stringList, "id");
-
-        stringList.add(index + 1, "id=test");
-
-
+        final List<String> stringList = convertFISResponseToList(receivedFromFis);
+        final int index = getIndex(stringList, "id");
+        if (index >= 0) {
+            stringList.add(index + 1, "id=test");
+        }
         return stringList;
     }
 
     public static List<String> addMap(final List<String> receivedFromFisList) {
-
         List<String> finalList = new ArrayList<>(receivedFromFisList);
-
-        int mapIndex = getIndex(receivedFromFisList, "map");
+        final int mapIndex = getIndex(receivedFromFisList, "map");
         if (mapIndex >= 0) {
             String mapValue = getValue(receivedFromFisList, "map");
             StringBuilder newMapValue = new StringBuilder(mapValue);
             newMapValue.append("0");
             newMapValue.insert(0, "map=");
-            String finalString = newMapValue.toString();
+            final String finalString = newMapValue.toString();
             finalList.set(mapIndex, finalString);
-
         }
-
         return finalList;
     }
 
     public static List<String> addMapWithCopy(final List<String> receivedFromFisList) {
-
         List<String> finalList = new ArrayList<>(receivedFromFisList);
-
-        int mapIndex = getIndex(receivedFromFisList, "map");
+        final int mapIndex = getIndex(receivedFromFisList, "map");
         if (mapIndex >= 0) {
             String mapValue = getValue(receivedFromFisList, "map");
             StringBuilder newMapValue = new StringBuilder(mapValue);
@@ -71,63 +64,66 @@ public class ModifiedStrings {
             } else {
                 newMapValue.append("0");
             }
-
             newMapValue.insert(0, "map=");
-            String finalString = newMapValue.toString();
+            final String finalString = newMapValue.toString();
             finalList.set(mapIndex, finalString);
-
         }
-
         return finalList;
     }
 
     public static List<String> convertFISResponseToList(final String receivedFromFis) {
-        List<String> stringList = new LinkedList<>(Arrays.asList(receivedFromFis.split("[|]")));
-
+        List<String> stringList;
+        if (receivedFromFis != null) {
+            stringList = new LinkedList<>(Arrays.asList(receivedFromFis.split("[|]")));
+        } else {
+            stringList = EMPTY_LIST;
+        }
         return stringList;
     }
 
 
-    private static int getIndex(List<String> stringList, String key) {
+    private static int getIndex(final List<String> stringList, final String key) {
         ListIterator<String> iterator = stringList.listIterator();
         int index = -1;
-        while (iterator.hasNext()) {
-            String currentStr = iterator.next();
-            if (currentStr.contains(key)) {
-                index = iterator.nextIndex() - 1;
-                break;
+        if (key != null) {
+            while (iterator.hasNext()) {
+                String currentStr = iterator.next();
+                if (currentStr.contains(key)) {
+                    index = iterator.nextIndex() - 1;
+                    break;
+                }
             }
         }
         return index;
     }
 
-    public static String getValue(List<String> stringList, String key) {
+    public static String getValue(final List<String> stringList, final String key) {
         String value = "";
-
-        int index = getIndex(stringList, key);
-        String valueFromIndex = stringList.get(index);
-        String[] pair = valueFromIndex.split("=");
-        if (pair[0].equals(key)) {
-            value = pair[1];
-        } else {
-            value = null;
+        if (key != null) {
+            final int index = getIndex(stringList, key);
+            final String valueFromIndex = stringList.get(index);
+            final String[] pair = valueFromIndex.split("=");
+            if (pair[0].equals(key)) {
+                value = pair[1];
+            }
         }
-
         return value;
     }
 
 
     public static String listToStringWithSeparator(final List<String> stringList, final String separator) {
-
-        String returnStr = "";
-        for (int i = 0; i < stringList.size(); i++) {
-            if (i == stringList.size() - 1) {
-                returnStr = returnStr + stringList.get(i);
-            } else {
-                returnStr = returnStr + stringList.get(i) + separator;
+        StringBuilder returnStr = new StringBuilder();
+        if (separator != null) {
+            for (int i = 0; i < stringList.size(); i++) {
+                if (i == stringList.size() - 1) {
+                    returnStr.append(stringList.get(i));
+                } else {
+                    returnStr.append(stringList.get(i));
+                    returnStr.append(separator);
+                }
             }
         }
-        return returnStr;
+        return returnStr.toString();
     }
 
 }

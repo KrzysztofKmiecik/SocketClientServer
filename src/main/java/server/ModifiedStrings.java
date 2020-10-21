@@ -31,7 +31,7 @@ public class ModifiedStrings {
         final List<String> stringList = convertFISResponseToList(receivedFromFis);
         final int index = getIndex(stringList, "id");
         if (index >= 0) {
-            stringList.add(index + 1, "id=test");
+            stringList.add(index + 1, "id=TEST");
         }
         return stringList;
     }
@@ -60,7 +60,6 @@ public class ModifiedStrings {
                 newMapValue.append("0");
             } else if ("1".equals(mapValue)) {
                 newMapValue.append("1");
-
             } else {
                 newMapValue.append("0");
             }

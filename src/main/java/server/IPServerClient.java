@@ -1,6 +1,6 @@
 package server;
 
-import client.IPClient;
+import client.Client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,24 +13,25 @@ import java.net.Socket;
 import java.util.Arrays;
 import java.util.List;
 
-public class IPServerClient {
+public class IPServerClient implements ServerClient {
 
     private final int portNumber;
-    private Logger logger = LoggerFactory.getLogger(IPServerClient.class);
+    private final Logger logger = LoggerFactory.getLogger(IPServerClient.class);
 
-    private IPClient FisClient;
-    private String[] prefixes;
+    private final Client FisClient;
+    private final String[] prefixes;
 
-    public static IPServerClient with(final int portNumber, final IPClient FisClient,final String[] prefixes) {
-        return new IPServerClient(portNumber, FisClient,prefixes);
+    public static IPServerClient with(final int portNumber, final Client FisClient, final String[] prefixes) {
+        return new IPServerClient(portNumber, FisClient, prefixes);
     }
 
-    private IPServerClient(final int portNumber, final IPClient FisClient,final String[] prefixes) {
+    private IPServerClient(final int portNumber, final Client FisClient, final String[] prefixes) {
         this.portNumber = portNumber;
         this.FisClient = FisClient;
-        this.prefixes=prefixes;
+        this.prefixes = prefixes;
     }
 
+    @Override
     public void connect() {
         logger.info("START");
         try (
@@ -40,7 +41,7 @@ public class IPServerClient {
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
         ) {
             final List<String> prefixes = Arrays.asList(this.prefixes);
-            String receivedFromClient = in.readLine();
+            final String receivedFromClient = in.readLine();
             logger.info("JavaServer received from milling: " + receivedFromClient);
             String receivedFromFis = FisClient.sendAndReceiveIPMessage(receivedFromClient);
             logger.info("JavaServer received from FIS: " + receivedFromFis);
@@ -55,8 +56,9 @@ public class IPServerClient {
         logger.info("STOP");
     }
 
-    public void connectLoop(){
-        while (true){
+    @Override
+    public void connectLoop()  {
+        while (true) {
             this.connect();
         }
     }

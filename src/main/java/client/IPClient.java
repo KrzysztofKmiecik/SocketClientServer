@@ -3,16 +3,20 @@ package client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 
-public class IPClient {
+public class IPClient implements Client {
 
-    private String hostIP;
-    private int hostPort;
+    private final String hostIP;
+    private final int hostPort;
 
-    private Logger logger= LoggerFactory.getLogger(IPClient.class);
+    private final Logger logger = LoggerFactory.getLogger(IPClient.class);
 
 
     public IPClient(String hostIP, int hostPort) {
@@ -20,14 +24,15 @@ public class IPClient {
         this.hostPort = hostPort;
     }
 
+    @Override
     public String sendAndReceiveIPMessage(String message) {
         String str = "";
         try (
                 Socket mySocket = new Socket(hostIP, hostPort);
                 PrintWriter out = new PrintWriter(mySocket.getOutputStream(), true);
-                BufferedReader in = new BufferedReader(new InputStreamReader(mySocket.getInputStream()));
+                BufferedReader in = new BufferedReader(new InputStreamReader(mySocket.getInputStream()))
         ) {
-            logger.info("Milling simulation_"+message);
+            logger.info("Milling simulation_" + message);
             out.println(message);
             str = in.readLine();
             logger.info(str);

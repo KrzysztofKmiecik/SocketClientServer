@@ -10,15 +10,16 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class IPServer {
+public class IPServer implements Server {
 
     private final int portNumber;
-    private Logger logger = LoggerFactory.getLogger(IPServer.class);
+    private final Logger logger = LoggerFactory.getLogger(IPServer.class);
 
     public IPServer(int portNumber) {
         this.portNumber = portNumber;
     }
 
+    @Override
     public void connect(String replayMessage) {
         try (
                 ServerSocket serverSocket = new ServerSocket(this.portNumber);

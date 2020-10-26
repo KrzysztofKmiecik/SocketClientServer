@@ -23,7 +23,7 @@ public class ModifiedStrings {
         final List<String> stringList;
         final List<String> finalList;
         stringList = addIDTest(receivedFromFis);
-        finalList = addMap(stringList);
+        finalList = add0ToMap(stringList);
         return finalList;
     }
 
@@ -40,7 +40,7 @@ public class ModifiedStrings {
         return stringList;
     }
 
-    public static List<String> addMap(final List<String> receivedFromFisList) {
+    public static List<String> add0ToMap(final List<String> receivedFromFisList) {
         List<String> finalList = new ArrayList<>(receivedFromFisList);
         final int mapIndex = getIndex(receivedFromFisList, "map");
         if (mapIndex >= 0) {
@@ -128,7 +128,7 @@ public class ModifiedStrings {
                     returnStr.append(separator);
                 }
             }
-            returnStr.append("\n");
+            returnStr.append("\r\n");
         }
         return returnStr.toString();
     }

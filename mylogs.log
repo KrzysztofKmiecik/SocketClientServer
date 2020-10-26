@@ -83,3 +83,20 @@
 26-10-2020 14:28:11 INFO  IPClient:38 - BCNF|id=6SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
 26-10-2020 14:28:11 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
 26-10-2020 14:28:11 INFO  MainTest:18 - Milling received: BCNF|id=6SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
+26-10-2020 15:36:01 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 15:36:01 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
+26-10-2020 15:36:01 INFO  IPClient:38 - BCNF|id=6SZZZZZ|id=6SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
+26-10-2020 15:36:01 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
+26-10-2020 15:36:01 INFO  MainTest:18 - Milling received: BCNF|id=6SZZZZZ|id=6SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
+26-10-2020 15:36:59 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 15:36:59 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=7SA003C
+26-10-2020 15:36:59 INFO  IPClient:38 - BCNF|id=7SA003C|id=7SZZZZZ|status=FAIL|msg=cannot get parent of 7SA003C
+26-10-2020 15:36:59 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7SA003C
+26-10-2020 15:36:59 INFO  MainTest:18 - Milling received: BCNF|id=7SA003C|id=7SZZZZZ|status=FAIL|msg=cannot get parent of 7SA003C
+26-10-2020 15:39:27 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 15:39:27 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=7SA003C
+26-10-2020 15:39:27 INFO  IPClient:38 - BCNF|id=7SA003C|id=7SZZZZZ|status=FAIL|msg=cannot get parent of 7SA003C
+26-10-2020 15:39:27 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7SA003C
+26-10-2020 15:39:27 INFO  MainTest:18 - Milling received: BCNF|id=7SA003C|id=7SZZZZZ|status=FAIL|msg=cannot get parent of 7SA003C
+26-10-2020 15:44:17 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 15:44:38 ERROR IPClient:43 - Couldn't get I/O for the connection to 10.235.244.57

@@ -2,7 +2,7 @@ package server;
 
 import java.util.*;
 
-import static java.util.Collections.*;
+import static java.util.Collections.EMPTY_LIST;
 
 public class ModifiedStrings {
 
@@ -30,8 +30,12 @@ public class ModifiedStrings {
     public static List<String> addIDTest(final String receivedFromFis) {
         final List<String> stringList = convertFISResponseToList(receivedFromFis);
         final int index = getIndex(stringList, "id");
+        StringBuilder stringToAdd=new StringBuilder("id=");
         if (index >= 0) {
-            stringList.add(index + 1, "id=TEST");
+            String prefix=getValue(stringList,"id").substring(0,2);
+            stringToAdd.append(prefix);
+            stringToAdd.append("ZZZZZ");
+            stringList.add(index + 1, stringToAdd.toString());
         }
         return stringList;
     }
@@ -100,11 +104,14 @@ public class ModifiedStrings {
         String value = "";
         if (key != null) {
             final int index = getIndex(stringList, key);
-            final String valueFromIndex = stringList.get(index);
-            final String[] pair = valueFromIndex.split("=");
-            if (pair[0].equals(key)) {
-                value = pair[1];
+            if (index >= 0) {
+                final String valueFromIndex = stringList.get(index);
+                final String[] pair = valueFromIndex.split("=");
+                if (pair[0].equals(key)) {
+                    value = pair[1];
+                }
             }
+
         }
         return value;
     }
@@ -121,6 +128,7 @@ public class ModifiedStrings {
                     returnStr.append(separator);
                 }
             }
+            returnStr.append("\n");
         }
         return returnStr.toString();
     }

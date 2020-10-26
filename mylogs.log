@@ -8,3 +8,78 @@
 21-10-2020 14:27:49 INFO  IPClient:38 - BCNF|id=7SZZZZZ|id=TEST|status=PASS|map=10
 21-10-2020 14:27:49 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
 21-10-2020 14:27:49 INFO  MainTest:18 - Milling received: BCNF|id=7SZZZZZ|id=TEST|status=PASS|map=10
+26-10-2020 10:12:11 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 10:12:11 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
+26-10-2020 10:12:12 INFO  IPClient:38 - BCNF|id=7SZZZZZ|id=TEST|status=PASS|map=10
+26-10-2020 10:12:12 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
+26-10-2020 10:12:12 INFO  MainTest:18 - Milling received: BCNF|id=7SZZZZZ|id=TEST|status=PASS|map=10
+26-10-2020 10:12:17 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 10:12:17 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
+26-10-2020 10:12:18 INFO  IPClient:38 - BCNF|id=7SZZZZZ|id=TEST|status=PASS|map=10
+26-10-2020 10:12:18 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
+26-10-2020 10:12:18 INFO  MainTest:18 - Milling received: BCNF|id=7SZZZZZ|id=TEST|status=PASS|map=10
+26-10-2020 10:12:35 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 10:12:35 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=5SZZZZZ
+26-10-2020 10:12:35 INFO  IPClient:38 - BCNF|id=5SZZZZZ|id=TEST|status=FAIL|map=00
+26-10-2020 10:12:35 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=5SZZZZZ
+26-10-2020 10:12:35 INFO  MainTest:18 - Milling received: BCNF|id=5SZZZZZ|id=TEST|status=FAIL|map=00
+26-10-2020 10:12:46 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 10:12:46 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
+26-10-2020 10:12:46 INFO  IPClient:38 - BCNF|id=7SZZZZZ|id=TEST|status=PASS|map=10
+26-10-2020 10:12:46 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
+26-10-2020 10:12:46 INFO  MainTest:18 - Milling received: BCNF|id=7SZZZZZ|id=TEST|status=PASS|map=10
+26-10-2020 12:42:44 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 12:42:44 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
+26-10-2020 12:42:44 INFO  IPClient:38 - BCNF|id=7SZZZZZ|id=TEST|status=PASS|map=10
+26-10-2020 12:42:44 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
+26-10-2020 12:42:44 INFO  MainTest:18 - Milling received: BCNF|id=7SZZZZZ|id=TEST|status=PASS|map=10
+26-10-2020 14:01:16 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 14:01:16 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=55SZZZZZ
+26-10-2020 14:01:18 INFO  IPClient:38 - BCNF|id=55SZZZZZ|status=FAIL|msg=Unit not exists in QTS database|
+26-10-2020 14:01:18 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=55SZZZZZ
+26-10-2020 14:01:18 INFO  MainTest:18 - Milling received: BCNF|id=55SZZZZZ|status=FAIL|msg=Unit not exists in QTS database|
+26-10-2020 14:02:33 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 14:02:33 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=57SZZZZZ
+26-10-2020 14:02:35 INFO  IPClient:38 - BCNF|id=57SZZZZZ|status=FAIL|msg=Unit not exists in QTS database|
+26-10-2020 14:02:35 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=57SZZZZZ
+26-10-2020 14:02:35 INFO  MainTest:18 - Milling received: BCNF|id=57SZZZZZ|status=FAIL|msg=Unit not exists in QTS database|
+26-10-2020 14:02:58 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 14:02:58 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
+26-10-2020 14:02:59 INFO  IPClient:38 - BCNF|id=7SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 7SZZZZZ is Master Sample
+26-10-2020 14:02:59 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=7SZZZZZ
+26-10-2020 14:02:59 INFO  MainTest:18 - Milling received: BCNF|id=7SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 7SZZZZZ is Master Sample
+26-10-2020 14:03:20 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 14:03:20 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
+26-10-2020 14:03:20 INFO  IPClient:38 - BCNF|id=6SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
+26-10-2020 14:03:20 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
+26-10-2020 14:03:20 INFO  MainTest:18 - Milling received: BCNF|id=6SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
+26-10-2020 14:03:30 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 14:03:30 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=3SZZZZZ
+26-10-2020 14:03:32 INFO  IPClient:38 - BCNF|id=3SZZZZZ|status=FAIL|msg=Unit not exists in QTS database|
+26-10-2020 14:03:32 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=3SZZZZZ
+26-10-2020 14:03:32 INFO  MainTest:18 - Milling received: BCNF|id=3SZZZZZ|status=FAIL|msg=Unit not exists in QTS database|
+26-10-2020 14:03:43 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 14:03:43 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=2SZZZZZ
+26-10-2020 14:03:44 INFO  IPClient:38 - BCNF|id=2SZZZZZ|status=FAIL|msg=Unit not exists in QTS database|
+26-10-2020 14:03:44 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=2SZZZZZ
+26-10-2020 14:03:44 INFO  MainTest:18 - Milling received: BCNF|id=2SZZZZZ|status=FAIL|msg=Unit not exists in QTS database|
+26-10-2020 14:03:56 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 14:03:56 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
+26-10-2020 14:03:56 INFO  IPClient:38 - BCNF|id=6SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
+26-10-2020 14:03:56 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
+26-10-2020 14:03:56 INFO  MainTest:18 - Milling received: BCNF|id=6SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
+26-10-2020 14:04:05 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 14:04:05 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=8SZZZZZ
+26-10-2020 14:04:07 INFO  IPClient:38 - BCNF|id=8SZZZZZ|status=FAIL|msg=Unit not exists in QTS database|
+26-10-2020 14:04:07 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=8SZZZZZ
+26-10-2020 14:04:07 INFO  MainTest:18 - Milling received: BCNF|id=8SZZZZZ|status=FAIL|msg=Unit not exists in QTS database|
+26-10-2020 14:04:27 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 14:04:27 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
+26-10-2020 14:04:28 INFO  IPClient:38 - BCNF|id=6SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
+26-10-2020 14:04:28 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
+26-10-2020 14:04:28 INFO  MainTest:18 - Milling received: BCNF|id=6SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
+26-10-2020 14:28:10 INFO  MainTest:11 - Hello I'm Client
+26-10-2020 14:28:10 INFO  IPClient:35 - Milling simulation_BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
+26-10-2020 14:28:11 INFO  IPClient:38 - BCNF|id=6SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample
+26-10-2020 14:28:11 INFO  MainTest:17 - Milling Sent: BREQ|process=MILLING|station=SMT_MILLING_1|id=6SZZZZZ
+26-10-2020 14:28:11 INFO  MainTest:18 - Milling received: BCNF|id=6SZZZZZ|id=7SZZZZZ|status=PASS|msg=unit: 6SZZZZZ is Master Sample

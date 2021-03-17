@@ -46,7 +46,7 @@ public class ModifiedStrings {
         if (mapIndex >= 0) {
             String mapValue = getValue(receivedFromFisList, "map");
             StringBuilder newMapValue = new StringBuilder(mapValue);
-            newMapValue.append("0");
+            newMapValue.append("1");
             newMapValue.insert(0, "map=");
             final String finalString = newMapValue.toString();
             finalList.set(mapIndex, finalString);

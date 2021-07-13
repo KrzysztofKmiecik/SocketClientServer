@@ -18,7 +18,7 @@ public class Main {
 
     private static void JavaServer() {
         Logger logger = LoggerFactory.getLogger(Main.class);
-        logger.info("Hello I'm JavaServer waiting for connection");
+        logger.info("Hello I'm JavaServer waiting for connection based on csv");
         //   final String[] prefixes = {"5S", "6S", "7S", "5T", "6T", "7T","7U","9U"};
         CSVFileService myCsvPrefix = new CSVFileUseCase("src/main/resources/static/prefixes.csv");
         List<String> prefixes = myCsvPrefix.readPrefixes();

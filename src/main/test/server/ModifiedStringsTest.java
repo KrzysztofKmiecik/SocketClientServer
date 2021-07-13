@@ -15,7 +15,7 @@ public class ModifiedStringsTest {
     @Test
     public void getMyModifiedStringWithPrefixFOUNDwith1() {
         final List<String> prefixes = Arrays.asList("5S", "6S", "7S", "5T", "6T", "7T");
-        final String expected = "BCNF|id=5SG1KF4|id=5SZZZZZ|status=PASS|map=10\n";
+        final String expected = "BCNF|id=5SG1KF4|id=5SZZZZZ|status=PASS|map=11\r\n";
         final String current = ModifiedStrings.getMyModifiedStringWithPrefix(prefixes,
                    "BCNF|id=5SG1KF4|status=PASS|map=1");
         Assert.assertEquals(expected, current);
@@ -24,7 +24,7 @@ public class ModifiedStringsTest {
     @Test
     public void getMyModifiedStringWithPrefixFOUNDwith0() {
         final List<String> prefixes = Arrays.asList("5S", "6S", "7S", "5T", "6T", "7T");
-        final String expected = "BCNF|id=7SG1KF4|id=7SZZZZZ|status=PASS|map=00\n";
+        final String expected = "BCNF|id=7SG1KF4|id=7SZZZZZ|status=PASS|map=01\r\n";
         final String current = ModifiedStrings.getMyModifiedStringWithPrefix(prefixes,
                    "BCNF|id=7SG1KF4|status=PASS|map=0");
         Assert.assertEquals(expected, current);
@@ -33,7 +33,7 @@ public class ModifiedStringsTest {
     @Test
     public void getMyModifiedStringWithPrefixFOUNDwith0FAIL() {
         final List<String> prefixes = Arrays.asList("5S", "6S", "7S", "5T", "6T", "7T");
-        final String expected = "BCNF|id=5SG1KF4|id=5SZZZZZ|status=FAIL|map=00\n";
+        final String expected = "BCNF|id=5SG1KF4|id=5SZZZZZ|status=FAIL|map=01\r\n";
         final String current = ModifiedStrings.getMyModifiedStringWithPrefix(prefixes,
                    "BCNF|id=5SG1KF4|status=FAIL|map=0");
         Assert.assertEquals(expected, current);
@@ -107,7 +107,7 @@ public class ModifiedStringsTest {
     @Test
     public void testListToStringWithSeparator() {
         final List<String> stringList = Arrays.asList("BCNF", "id=5SG1KF4", "id=7SZZZZZ" , "status=FAIL", "map=00");
-        final String expected="BCNF|id=5SG1KF4|id=7SZZZZZ|status=FAIL|map=00\n";
+        final String expected="BCNF|id=5SG1KF4|id=7SZZZZZ|status=FAIL|map=00\r\n";
         final String actual=ModifiedStrings.listToStringWithSeparator(stringList,"|");
         Assert.assertEquals(expected,actual);
     }

@@ -68,6 +68,15 @@ public class ModifiedStringsTest {
     }
 
     @Test
+    public void getMyModifiedStringWithPrefixNULL() {
+        final List<String> prefixes = Arrays.asList("5S", "6S", "7S", "5T", "6T", "7T");
+        final String expected = "";
+        final String current = ModifiedStrings.getMyModifiedStringWithPrefix(prefixes, null);
+        Assert.assertEquals(expected, current);
+
+    }
+
+    @Test
     public void getValue() {
         final String FISresponse = "BCNF|id=9FG1ID6X|status=PASS|map=1";
         final List<String> FISresponseList = ModifiedStrings.convertFISResponseToList(FISresponse);

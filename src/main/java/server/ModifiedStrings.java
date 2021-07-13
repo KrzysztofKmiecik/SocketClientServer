@@ -1,22 +1,26 @@
 package server;
 
+import com.sun.deploy.util.StringUtils;
+
 import java.util.*;
 
 import static java.util.Collections.EMPTY_LIST;
 
 public class ModifiedStrings {
+    private static final String EMPTY_STRING = "";
 
     public static String getMyModifiedStringWithPrefix(final List<String> prefixes, final String receivedFromFis) {
         String myModifiedString;
-        if (receivedFromFis.contains("BCNF")) {
+        String fromFis = Optional.ofNullable(receivedFromFis).orElse(EMPTY_STRING);
+        if (fromFis.contains("BCNF")) {
             for (String prefix : prefixes) {
-                if (receivedFromFis.contains("id=" + prefix)) {
-                    myModifiedString = listToStringWithSeparator(prepareFinalList(receivedFromFis), "|");
+                if (fromFis.contains("id=" + prefix)) {
+                    myModifiedString = listToStringWithSeparator(prepareFinalList(fromFis), "|");
                     return myModifiedString;
                 }
             }
         }
-        return receivedFromFis;
+        return fromFis;
     }
 
     public static List<String> prepareFinalList(final String receivedFromFis) {
@@ -30,9 +34,9 @@ public class ModifiedStrings {
     public static List<String> addIDTest(final String receivedFromFis) {
         final List<String> stringList = convertFISResponseToList(receivedFromFis);
         final int index = getIndex(stringList, "id");
-        StringBuilder stringToAdd=new StringBuilder("id=");
+        StringBuilder stringToAdd = new StringBuilder("id=");
         if (index >= 0) {
-            String prefix=getValue(stringList,"id").substring(0,2);
+            String prefix = getValue(stringList, "id").substring(0, 2);
             stringToAdd.append(prefix);
             stringToAdd.append("ZZZZZ");
             stringList.add(index + 1, stringToAdd.toString());

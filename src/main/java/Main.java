@@ -1,6 +1,6 @@
 import CsvFile.CSVFileService;
 import CsvFile.CSVFileUseCase;
-import CsvFile.ConfigCsvFile;
+import CsvFile.model.ConfigCsvFile;
 import client.IPClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

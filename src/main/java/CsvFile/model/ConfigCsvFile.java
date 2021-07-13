@@ -1,4 +1,4 @@
-package CsvFile;
+package CsvFile.model;
 
 import java.util.Objects;
 

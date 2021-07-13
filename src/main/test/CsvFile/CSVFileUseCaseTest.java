@@ -1,5 +1,6 @@
 package CsvFile;
 
+import CsvFile.model.ConfigCsvFile;
 import org.junit.Assert;
 import org.junit.Test;
 

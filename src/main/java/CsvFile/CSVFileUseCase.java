@@ -1,5 +1,7 @@
 package CsvFile;
 
+import CsvFile.model.ConfigCsvFile;
+import CsvFile.model.PcbPrefix;
 import com.opencsv.bean.CsvToBeanBuilder;
 
 import java.io.FileNotFoundException;

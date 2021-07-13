@@ -1,4 +1,4 @@
-package CsvFile;
+package CsvFile.model;
 
 public class PcbPrefix {
     private String prefix;

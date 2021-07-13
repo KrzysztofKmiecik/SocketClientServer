@@ -1,7 +1,5 @@
 package server;
 
-import com.sun.deploy.util.StringUtils;
-
 import java.util.*;
 
 import static java.util.Collections.EMPTY_LIST;

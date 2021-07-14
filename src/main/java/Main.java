@@ -11,18 +11,17 @@ import java.util.List;
 
 
 public class Main {
-
     public static void main(String[] args) {
-        JavaServer();
+        JavaServer(args[0], args[1]);
     }
 
-    private static void JavaServer() {
+    private static void JavaServer(final String configFile, final String prefixFile) {
         Logger logger = LoggerFactory.getLogger(Main.class);
         logger.info("Hello I'm JavaServer waiting for connection based on csv");
         //   final String[] prefixes = {"5S", "6S", "7S", "5T", "6T", "7T","7U","9U"};
-        CSVFileService myCsvPrefix = new CSVFileUseCase("src/main/resources/static/prefixes.csv");
+        CSVFileService myCsvPrefix = new CSVFileUseCase(prefixFile);
         List<String> prefixes = myCsvPrefix.readPrefixes();
-        CSVFileService myCsvConfig = new CSVFileUseCase("src/main/resources/static/ipconfig.csv");
+        CSVFileService myCsvConfig = new CSVFileUseCase(configFile);
         ConfigCsvFile myConfigCsvFile = myCsvConfig.readConfig().get(0);
         final ServerClient javaServer = IPServerClient.with(myConfigCsvFile.getServerPort(),
                 new IPClient(myConfigCsvFile.getClientIp(), myConfigCsvFile.getClientPort()),

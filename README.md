@@ -1,5 +1,5 @@
 # SocketClientServer
-# v79
+# v80
 *Target is to prepare service which can transform response from FIS server*  
 
 #### Actions
@@ -10,16 +10,16 @@
 - [x] Dockerfile
 - [x] Loop
 - [x] Refactoring
-- [ ] Real tests
+- [x] Real tests
 - [ ] Performace test
 
-docker build -f Dockerfile -t milling:v1 .
+docker build -f Dockerfile -t milling:v79 .
    docker run -p 4444:4444 --name serverformilling ff7
    docker logout
 docker login 
-docker tag 49 loran07/serverformilling:ver01
-docker push loran07/serverformilling:ver01
-docker pull loran07/serverformilling:ver01
+docker tag 49 loran07/serverformilling:v79
+docker push loran07/serverformilling:v79
+docker pull loran07/serverformilling:v79
 
 docker stop 47u
 docker start 47u

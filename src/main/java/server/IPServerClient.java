@@ -51,6 +51,8 @@ public class IPServerClient implements ServerClient {
             if ((receivedFromFis != null) && (!EMPTY_STRING.equals(myModifiedString))) {
                 out.println(myModifiedString);
                 logger.info("JavaServer sent to milling " + myModifiedString);
+            }else{
+                logger.error("No data from FIS server" );
             }
 
         } catch (IOException e) {

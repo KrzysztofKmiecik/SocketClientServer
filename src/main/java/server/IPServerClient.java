@@ -20,6 +20,7 @@ public class IPServerClient implements ServerClient {
 
     private final Client FisClient;
     private final String[] prefixes;
+    private static final String EMPTY_STRING = "";
 
     public static IPServerClient with(final int portNumber, final Client FisClient, final String[] prefixes) {
         return new IPServerClient(portNumber, FisClient, prefixes);
@@ -47,8 +48,11 @@ public class IPServerClient implements ServerClient {
             logger.info("JavaServer received from FIS: " + receivedFromFis);
             String myModifiedString = ModifiedStrings.getMyModifiedStringWithPrefix(prefixes, receivedFromFis);
             logger.info("JavaServer is going to send to milling " + myModifiedString);
-            out.println(myModifiedString);
-            logger.info("JavaServer sent to milling " + myModifiedString);
+            if ((receivedFromFis != null) && (!EMPTY_STRING.equals(myModifiedString))) {
+                out.println(myModifiedString);
+                logger.info("JavaServer sent to milling " + myModifiedString);
+            }
+
         } catch (IOException e) {
             logger.error("Exception caught when trying to listen on port " + portNumber + " or listening for a connection");
             logger.error(e.getMessage());
@@ -57,7 +61,7 @@ public class IPServerClient implements ServerClient {
     }
 
     @Override
-    public void connectLoop()  {
+    public void connectLoop() {
         while (true) {
             this.connect();
         }

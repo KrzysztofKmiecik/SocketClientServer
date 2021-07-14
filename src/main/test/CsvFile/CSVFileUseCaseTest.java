@@ -13,7 +13,7 @@ public class CSVFileUseCaseTest {
     public void readPrefixes() {
         //given
         CSVFileService myCsv = new CSVFileUseCase("src/main/resources/static/prefixes.csv");
-        List<String> expected = Arrays.asList("5S", "6S", "7S", "5T", "6T", "7T", "7U", "9U");
+        List<String> expected = Arrays.asList("5S", "6S", "7S", "5T", "6T", "7T", "7U", "9U","2V");
         //when
         List<String> actual = myCsv.readPrefixes();
         //   pcbPrefixes.stream().forEach(System.out::println);

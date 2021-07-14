@@ -23,9 +23,9 @@ public class IPServer implements Server {
     public void connect(String replayMessage) {
         try (
                 ServerSocket serverSocket = new ServerSocket(this.portNumber);
-                Socket clientSocket = serverSocket.accept();
-                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
+                Socket socket = serverSocket.accept();
+                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
 
             out.println(replayMessage);

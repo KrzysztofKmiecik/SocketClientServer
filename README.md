@@ -1,5 +1,5 @@
 # SocketClientServer
-# v81
+# v82
 *Target is to prepare service which can transform response from FIS server*  
 
 #### Actions

@@ -38,11 +38,11 @@ public class IPClient implements Client {
             logger.info(str);
         } catch (UnknownHostException e) {
             logger.error("Don't know about host " + hostIP);
-            System.exit(1);
+          //  System.exit(1);
         } catch (IOException e) {
             logger.error("Couldn't get I/O for the connection to " +
                     hostIP);
-            System.exit(1);
+          //  System.exit(1);
         }
         return str;
     }

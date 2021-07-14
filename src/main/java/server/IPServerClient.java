@@ -37,9 +37,9 @@ public class IPServerClient implements ServerClient {
         logger.info("START");
         try (
                 ServerSocket serverSocket = new ServerSocket(this.portNumber);
-                Socket clientSocket = serverSocket.accept();
-                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
+                Socket socket = serverSocket.accept();
+                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
             final List<String> prefixes = Arrays.asList(this.prefixes);
             final String receivedFromClient = in.readLine();

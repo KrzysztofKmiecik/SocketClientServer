@@ -7,10 +7,10 @@ import server.ServerClient;
 
 public class Main {
     public static void main(String[] args) {
-        JavaServer(args[0], args[1]);
+        JavaServer();
     }
 
-    private static void JavaServer(final String configFile, final String prefixFile) {
+    private static void JavaServer() {
         Logger logger = LoggerFactory.getLogger(Main.class);
         logger.info("Hello I'm JavaServer(v90) waiting for connection ");
 

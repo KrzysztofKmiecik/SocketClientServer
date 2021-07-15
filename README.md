@@ -1,5 +1,5 @@
 # SocketClientServer
-# v90
+# v91
 *Target is to prepare service which can transform response from FIS server*  
 
 #### Actions
@@ -30,3 +30,23 @@ git status
 git add. 
 git commit -m "initial commit"
 git push -a
+
+//https://www.samouczekprogramisty.pl/java-z-linii-polecen/
+
+!!!! zbudowac artifact od nowa aby zrobil extract biblotek jar
+
+java -cp .  -jar out\artifacts\SocketClientServer_jar\SocketClientServer.jar out\artifacts\SocketClientServer_jar\ipconfig.csv out\artifacts\SocketClientServer_jar\prefixes.csv
+
+; separator  dla Windows
+: separator dla reszty
+. bierzacy katalog
+java -cp .:commons-lang3-3.5.jar pl.samouczekprogramisty.commandline.CheckName
+
+budowa jar bez wpisu manifestu
+jar cf <nazwa pliku wyjsciowego> <lista katalogów, klas do umieszczenia w pliku JAR>
+
+budowa jar z wpisem manifestu
+jar cfe output.jar pl.samouczekprogramisty.commandline.MainClass .
+
+zawartosc jar
+jar tf <sciezka pliku JAR>

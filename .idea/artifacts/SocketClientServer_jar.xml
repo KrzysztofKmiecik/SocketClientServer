@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="SocketClientServer:jar">
+  <artifact type="jar" build-on-make="true" name="SocketClientServer:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/SocketClientServer_jar</output-path>
     <root id="archive" name="SocketClientServer.jar">
       <element id="module-output" name="SocketClientServer" />

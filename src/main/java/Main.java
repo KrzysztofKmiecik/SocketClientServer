@@ -17,7 +17,7 @@ public class Main {
 
     private static void JavaServer(final String configFile,final String prefixFile) {
         Logger logger = LoggerFactory.getLogger(Main.class);
-        logger.info("Hello I'm JavaServer(v90) waiting for connection ");
+        logger.info("Hello I'm JavaServer(v95) waiting for connection ");
 
     /*    final String[] prefixes = {"5S", "6S", "7S", "5T", "6T", "7T", "7U", "9U", "2V"};
         final ServerClient javaServer = IPServerClient.with(4444,
